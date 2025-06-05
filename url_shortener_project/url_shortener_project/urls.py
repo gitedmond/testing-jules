@@ -15,9 +15,23 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include # Added include
+from django.urls import path, include, re_path
+from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('shortener.urls')), # Added this line
+
+    # API and redirect URLs from the 'shortener' app
+    # These are more specific, so they should come before the general catch-all.
+    # Assuming shortener.urls.py contains:
+    #   path('api/shorten/', ...)
+    #   path('<str:short_code>/', ...)
+    # Including it at the root like this makes these paths available directly from root.
+    path('', include('shortener.urls')),
+
+    # Catch-all for React frontend:
+    # Serves index.html for any path not matched by Django above.
+    # This is essential for single-page applications like React that handle their own routing.
+    # For example, accessing '/' or '/some-react-route' will serve index.html.
+    re_path(r'^.*$', TemplateView.as_view(template_name='index.html')),
 ]
