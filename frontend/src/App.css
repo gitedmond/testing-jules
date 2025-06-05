@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f4f7f6;
+  color: #333;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.App-header {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #eee;
+}
+
+.App-header h1 {
+  margin: 0;
+  font-size: 2.5em;
+  color: #007bff;
+}
+
+main {
+  width: 100%;
+  max-width: 500px; /* Max width for the content area */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Basic styling for loading and error messages */
+.App p {
+  font-size: 1em;
+}
+
+.App .loading-message {
+  color: #555;
+  font-style: italic;
+}
+
+.App .error-message {
+  color: #d9534f; /* Bootstrap danger color */
+  background-color: #f2dede; /* Light red background */
+  border: 1px solid #ebccd1;
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 15px;
+}

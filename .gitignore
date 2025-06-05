@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.venv/
+venv/
+env/
+ENV/
+
+# Django
+*.sqlite3
+*.log
+
+# React
+frontend/node_modules/
+frontend/build/
+frontend/.pnp
+frontend/.pnp.js
+frontend/coverage/
+
+# OS / Editor specific
+.DS_Store
+.idea/
+*.swp
+*.swo
+*~
