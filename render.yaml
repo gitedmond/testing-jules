@@ -1,20 +1,20 @@
 databases:
-  - name: mysitedb
+  - name: urlshortenerdb
     plan: free
-    databaseName: mysite
-    user: mysite
+    databaseName: urlshortener
+    user: urlshortener
 
 services:
   - type: web
     plan: free
-    name: mysite
+    name: urlshortener
     runtime: python
     buildCommand: './build.sh'
     startCommand: 'python -m gunicorn url_shortener_project.asgi:application -k uvicorn.workers.UvicornWorker'
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: mysitedb
+          name: urlshortenerdb
           property: connectionString
       - key: SECRET_KEY
         generateValue: true
