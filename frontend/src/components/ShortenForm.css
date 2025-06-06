@@ -3,16 +3,34 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
+  width: 100%; /* Ensure form takes up available width in its container */
 }
 
-.shorten-form input[type="url"] {
+.shorten-form div {
+  margin-bottom: 15px; /* Space between input groups */
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Labels above inputs */
+  align-items: center; /* Center labels and inputs if form is centered */
+}
+
+.shorten-form label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  text-align: left; /* Align label text to the left */
+  width: 320px; /* Match input width + padding */
+  max-width: 100%;
+}
+
+.shorten-form input[type="url"],
+.shorten-form input[type="text"] {
   padding: 10px;
-  margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
-  width: 300px;
-  max-width: 100%;
+  width: 300px; /* Define a base width */
+  max-width: 100%; /* Ensure responsiveness */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
 .shorten-form button[type="submit"] {
@@ -23,8 +41,14 @@
   border-radius: 4px;
   font-size: 16px;
   cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
 }
 
 .shorten-form button[type="submit"]:hover {
   background-color: #0056b3;
+}
+
+.shorten-form button[type="submit"]:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
 }
