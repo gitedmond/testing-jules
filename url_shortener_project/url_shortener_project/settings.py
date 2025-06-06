@@ -122,11 +122,6 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-# For serving React static files
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, '..', 'frontend', 'build', 'static'),
-]
-
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
 ]

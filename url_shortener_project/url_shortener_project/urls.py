@@ -28,10 +28,4 @@ urlpatterns = [
     #   path('<str:short_code>/', ...)
     # Including it at the root like this makes these paths available directly from root.
     path('', include('shortener.urls')),
-
-    # Catch-all for React frontend:
-    # Serves index.html for any path not matched by Django above.
-    # This is essential for single-page applications like React that handle their own routing.
-    # For example, accessing '/' or '/some-react-route' will serve index.html.
-    re_path(r'^.*$', TemplateView.as_view(template_name='index.html')),
 ]
