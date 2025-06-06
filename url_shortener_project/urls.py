@@ -17,10 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include, re_path
 from django.views.generic import TemplateView
+from django.http import HttpResponse
+
+def welcome_view(request):
+    return HttpResponse("Welcome to the URL Shortener API!")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
+    path('', welcome_view),
     # API and redirect URLs from the 'shortener' app
     # These are more specific, so they should come before the general catch-all.
     # Assuming shortener.urls.py contains:
