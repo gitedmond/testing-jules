@@ -129,6 +129,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # always define this
 if not DEBUG:
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+ALLOWED_HOSTS = ['urlshortener-vg7i.onrender.com', 'localhost', '127.0.0.1']
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
