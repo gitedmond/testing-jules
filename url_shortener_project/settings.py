@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'url_shortener_project.shortener',
+    'shortener',
     'rest_framework',
     'corsheaders',
 ]
